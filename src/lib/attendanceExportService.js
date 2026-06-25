@@ -36,6 +36,10 @@ const excelData = records.map((row, index) => ({
     : row.attendance_statuses?.name || "-",
 
   Catatan: row.notes || "",
+
+  "Lat Check-in": row.loc_checkin?.lat ?? "-",
+  "Lng Check-in": row.loc_checkin?.lng ?? "-",
+  "Alamat Check-in": row.loc_checkin?.address || "-",
 }));
 
 
@@ -43,19 +47,21 @@ const excelData = records.map((row, index) => ({
   const worksheet = XLSX.utils.json_to_sheet(excelData);
 
  worksheet["!cols"] = [
-  { wch: 5 },
-  { wch: 12 },
-  { wch: 25 },
-  { wch: 15 },
-  { wch: 25 },
-  { wch: 18 },
-  { wch: 25 },
-  { wch: 12 },
-  { wch: 12 },
-  { wch: 12 },
-  { wch: 18 },
-  { wch: 15 },
-  { wch: 30 },
+  { wch: 5 },   // No
+  { wch: 12 },  // Tanggal
+  { wch: 25 },  // Nama Karyawan
+  { wch: 15 },  // NIK
+  { wch: 25 },  // Nama PM
+  { wch: 18 },  // Lokasi Kerja
+  { wch: 25 },  // Keterangan/Project
+  { wch: 12 },  // Check In
+  { wch: 12 },  // Check Out
+  { wch: 18 },  // Total Jam Kerja
+  { wch: 15 },  // Status
+  { wch: 30 },  // Catatan
+  { wch: 15 },  // Lat Check-in
+  { wch: 15 },  // Lng Check-in
+  { wch: 45 },  // Alamat Check-in
 ];
 
 

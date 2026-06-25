@@ -2,3 +2,21 @@ node_modules
 .env.local
 *.timestamp-*.mjs
 t.tsxt
+
+# Vite cache
+.vite/
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Exported files (prevent accidental commits)
+*.xlsx
+*.xls
+*.csv
+
+# OS clutter
+.DS_Store
+Thumbs.db
